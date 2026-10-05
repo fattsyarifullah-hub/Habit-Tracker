@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="footer.css">
+    <title>Habit Tracker App</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="title">
+        <div class="icon-title">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-activity"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"
+            />
+          </svg>
+        </div>
+
+        <div class="text-title">
+          <h1>HABITRACKER</h1>
+          <p>Consistency Is A Key For Build Your Future</p>
+        </div>
+      </div>
+
+      <div class="container-today">
+        <div class="icon-today">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="bi bi-calendar"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+            />
+          </svg>
+        </div>
+
+        <div class="text-today">
+          <h4>TODAY</h4>
+          <p id="new-date"></p>
+        </div>
+      </div>
+    </header>
+
+    <span class="after-header"></span>
+
+    <main>
+      <!-- MAIN INPUT NEW TASK -->
+      <form class="add-task" id="createForm">
+        <input
+          type="text"
+          placeholder="Add New Habit ( e.g., Reading Book )"
+          class="add-input" id="createTitleForm" required
+        />
+        <button type="submit" class="add-button">CREATE</button>
+      </form>
+
+      <div class="information">
+        <!-- MAIN LEFT WIDGET -->
+        <section class="list-task" id="listTask">
+
+        </section>
+
+        <!-- MAIN RIGHT WIDGET -->
+        <section class="track-heatmap">
+
+          <div class="title-heatmap">
+            <div class="icon-track">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-bar-chart"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"
+                />
+              </svg>
+            </div>
+
+            <div class="text-track">
+              <h4>HEATMAP</h4>
+              <p>History Visualize Your Habit</p>
+            </div>
+
+            <div class="done-track">
+              <h4><span id="currentTask"></span> / <span class="total-task"></span>
+              </h4>
+            </div>
+
+            <div class="button-track">
+              <button class="button-left" onclick="prevTask()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="36"
+                  height="36"
+                  fill="currentColor"
+                  class="bi bi-arrow-left-short"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
+                  />
+                </svg>
+              </button>
+              <button class="button-right" onclick="nextTask()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="36"
+                  height="36"
+                  fill="currentColor"
+                  class="bi bi-arrow-right-short"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="heatmap-widget">
+
+            <div class="heatmap-title">
+              <h4 id="heatmapTask"></h4>
+              <p id="heatmapMonth"></p>
+            </div>
+
+            <span class="after-content"></span>
+
+            <div class="heatmap-grid" id="heatmapGrid">
+              
+            </div>
+
+            <h4 id="heatmapStreak" class="heatmap-streak"></h4>
+
+            <span class="after-content"></span>
+
+            <div class="heatmap-desc">
+              
+            </div>
+
+            
+          </div>
+
+        </section>
+      </div>
+    </main>
+
+    <span class="after-main"></span>
+
+    <!-- FOOTER -->
+    <footer>
+
+    </footer>
+  </body>
+
+  <script src="main.js"></script>
+</html>

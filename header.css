@@ -1,0 +1,124 @@
+/* HEADER LAYOUT */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+/* TITLE LAYOUT ( RIGHT ) */
+.title {
+    width: 600px;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ICON */
+.icon-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #CCFF00;
+    box-shadow: 5px 5px 0px black;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease, transform 0.3s ease;
+}
+
+.icon-title:hover {
+    background-color: black;
+    box-shadow: 7px 7px 0px #CCFF00;
+    transform: translateY(-5px);
+}
+
+.icon-title > svg:hover {
+    fill: white;
+}
+
+/* TEXT */
+.text-title {
+    font-family: 'montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.text-title > h1 {
+    letter-spacing: 2.3px;
+    font-weight: 900;
+}
+
+
+/* CONTAINER TODAY LAYOUT ( LEFT ) */
+.container-today {
+    width: 300px;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border: 3px solid black;
+    background-color: white;
+    color: black;
+    gap: 15px;
+    box-shadow: 5px 5px 0px black;
+}
+
+/* ICON  */
+.icon-today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: white;
+    border: 3px solid black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-today:hover {
+    transform: translateY(-5px);
+    box-shadow: 7px 7px 0px black;
+}
+
+/* TEXT TODAY */
+.text-today {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.text-today > h4 {
+    font-weight: 700;
+    font-size: 12px;
+    width: fit-content;
+    background-color: #CCFF00;
+    border: 3px solid black;
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-today > h4:hover {
+    transform: translateY(-5px);
+    box-shadow: 7px 7px 0px black;
+}
+
+/* TEXT DATE  */
+.text-today > p {
+    font-size: 16px;
+    font-weight: 900;
+}
+
+/* LINE AFTER HEADER */
+.after-header {
+    margin: 30px 20px;
+    height: 5px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
