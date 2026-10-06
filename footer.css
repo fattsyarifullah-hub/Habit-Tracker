@@ -1,0 +1,57 @@
+footer {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.copyright {
+    padding: 20px;
+    border: 3px solid black;
+    box-shadow: 5px 5px 0px black;
+    display: flex;
+    justify-content: center;
+    background-color: #CCFF00;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: "Montserrat", sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.copyright:hover {
+    transform: translateY(-5px);
+    box-shadow: 7px 7px 0px black;
+}
+
+.contact {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.github, .email {
+    padding: 20px;
+    border: 3px solid black;
+    box-shadow: 5px 5px 0px black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.github:hover, .email:hover {
+    transform: translateY(-5px);
+    box-shadow: 7px 7px 0px black;
+}
+
+.github > a, .email > a {
+    text-decoration: none;
+}
+
+.github {
+    background-color: #A5F3FC;
+}
+
+.email {
+    background-color: #FEF08A;
+}

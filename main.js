@@ -122,7 +122,7 @@ function readAllTask() {
               </div>
 
           <div class="progress-bar">
-            <span></span>
+            <div class="progress-fill" id="progressFill"></div>
           </div>
     `
     
@@ -153,6 +153,7 @@ function readAllTask() {
             });
             
             countAllTask()
+            progressBar()
             renderCurrentHeatmapTask()
             
 }
@@ -285,6 +286,23 @@ function checkStreak(task) {
 
     streak.innerText = `${task.streak} streak`
 
+}
+
+
+function progressBar() {
+    const tasks = getTask()
+    const totalTasks = tasks.length
+
+    const completedTasks = tasks.filter(task => task.completedToday).length
+
+    const percentage = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0
+
+    const fillColor = document.getElementById('progressFill')
+
+    if (fillColor) {
+        fillColor.style.width = `${percentage}%`
+
+    }
 }
 
 readAllTask()

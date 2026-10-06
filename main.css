@@ -119,7 +119,7 @@ main {
 .done-list {
     width: 100px;
     border: 3px solid black;
-    background-color: #CCFF00;
+    background-color: #FEF08A;
     padding: 12px;
     box-shadow: 5px 5px 0px black ;
     font-family: "Montserrat", sans-serif;
@@ -141,16 +141,16 @@ main {
     box-shadow: 5px 5px 0px black;
 }
 
-.progress-bar > span {
+.progress-fill {
     margin: 5px;
-    width: 100%;
+    width: 0%;
     height: 60%;
     border: 1px solid black;
     background-color: #CCFF00;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease-in-out;
 }
 
-.progress-bar > span:hover {
+.progress-fill:hover {
     transform: translateY(-3px);
     box-shadow: 3px 3px 0px black;
 }
@@ -299,9 +299,15 @@ main {
     justify-content: center;
     width: fit-content;
     height: fit-content;
-    background-color: #CCFF00;
+    background-color: #A5F3FC;
     border: 3px solid black;
     box-shadow: 5px 5px 0px black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.done-track:hover {
+    transform: translateY(-5px);
+    box-shadow: 7px 7px 0px black;
 }
 
 .button-track {
@@ -400,7 +406,7 @@ main {
 .heatmap-streak {
     margin: 20px;
     padding: 20px;
-    background-color: #CCFF00;
+    background-color: #A5F3FC;
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -412,6 +418,12 @@ main {
     letter-spacing: 1.6px;
     border: 3px solid black;
     box-shadow: 5px 5px 0px black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.heatmap-streak:hover {
+    transform: translateY(-5px);
+    box-shadow: 7px 7px 0px black;
 }
 
 .container-day {
