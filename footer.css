@@ -1,57 +1,80 @@
 footer {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
 .copyright {
-    padding: 20px;
-    border: 3px solid black;
-    box-shadow: 5px 5px 0px black;
-    display: flex;
-    justify-content: center;
-    background-color: #CCFF00;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 800;
-    font-family: "Montserrat", sans-serif;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0px black;
+  display: flex;
+  justify-content: center;
+  background-color: #ccff00;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .copyright:hover {
-    transform: translateY(-5px);
-    box-shadow: 7px 7px 0px black;
+  transform: translateY(-5px);
+  box-shadow: 7px 7px 0px black;
 }
 
 .contact {
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    align-items: center;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
 }
 
-.github, .email {
-    padding: 20px;
-    border: 3px solid black;
-    box-shadow: 5px 5px 0px black;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.github,
+.email {
+  padding: 20px;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0px black;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.github:hover, .email:hover {
-    transform: translateY(-5px);
-    box-shadow: 7px 7px 0px black;
+.github:hover,
+.email:hover {
+  transform: translateY(-5px);
+  box-shadow: 7px 7px 0px black;
 }
 
-.github > a, .email > a {
-    text-decoration: none;
+.github > a,
+.email > a {
+  text-decoration: none;
 }
 
 .github {
-    background-color: #A5F3FC;
+  background-color: #a5f3fc;
 }
 
 .email {
-    background-color: #FEF08A;
+  background-color: #fef08a;
+}
+
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .copyright {
+    text-align: center;
+  }
+  .contact {
+    justify-content: center;
+  }
 }
